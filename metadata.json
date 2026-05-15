@@ -1,0 +1,6 @@
+{
+  "name": "KOWEPO Anomaly Dashboard",
+  "description": "한국서부발전 고압전동기 이상탐지 및 모니터링 시스템",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-text-main: var(--text-main);
+  --color-text-dim: var(--text-dim);
+  --color-muted: var(--muted);
+
+  --animate-spin-slow: spin 3s linear infinite;
+}
+
+:root {
+  --bg: #f5f7f9;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --text-main: #0f172a;
+  --text-dim: #64748b;
+  --muted: #f1f5f9;
+}
+
+.dark {
+  --bg: #0A0A0B;
+  --card: #161618;
+  --border: #2A2A2E;
+  --text-main: #ffffff;
+  --text-dim: #757575;
+  --muted: #1e1e22;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text-main antialiased transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-card border border-border rounded-xl;
+  }
+}
+
+/* Custom Scrollbar for Dark Mode */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A2A2E;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3A3A40;
+}
+
+/* Animation Utilities */
+.status-ping {
+  @apply relative flex h-3 w-3;
+}
+
+.status-ping-inner {
+  @apply animate-ping absolute inline-flex h-full w-full rounded-full opacity-75;
+}
+
+.status-ping-dot {
+  @apply relative inline-flex rounded-full h-3 w-3;
+}
+
